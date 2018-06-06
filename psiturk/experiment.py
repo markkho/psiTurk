@@ -431,7 +431,8 @@ def start_exp():
             ipaddress=worker_ip,
             browser=browser,
             platform=platform,
-            language=language
+            language=language,
+            mode=mode
         )
         part = Participant(**participant_attributes)
         db_session.add(part)
@@ -490,7 +491,8 @@ def start_exp():
         condition=part.cond,
         counterbalance=part.counterbalance,
         adServerLoc=ad_server_location,
-        mode = mode
+        mode = mode,
+        contact_address=CONFIG.get('HIT Configuration', 'contact_email_on_error')
     )
 
 @app.route('/inexp', methods=['POST'])

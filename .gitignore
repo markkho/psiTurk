@@ -60,3 +60,4 @@ nosetests.xml
 .DS_Store
 
 doc/_build
+.idea/*
